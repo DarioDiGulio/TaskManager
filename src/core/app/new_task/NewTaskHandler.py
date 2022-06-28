@@ -13,19 +13,22 @@ class NewTaskHandler(Handler):
         self.__tasks = tasks
 
     def execute(self, request: NewTask) -> Id:
-        self.__fail_with_invalid_task(request)
-        self.__fail_if_already_exists(request)
+        self.__fail(request)
         next_id = self.__tasks.next_id()
         date = datetime.strptime(request.due_date, '%d/%m/%Y')
         new_task = Task(next_id, request.title, request.description, date)
         self.__tasks.add_task(new_task)
         return next_id
 
-    def __fail_if_already_exists(self, request):
+    def __fail(self, request: NewTask):
+        self.__fail_with_invalid_task(request)
+        self.__fail_if_already_exists(request)
+
+    def __fail_if_already_exists(self, request: NewTask):
         if self.__tasks.find_by(request.title, request.description):
             raise TaskAlreadyExistsException(
                 f'Task with title {request.title} and description {request.description} already exists')
 
-    def __fail_with_invalid_task(self, request):
+    def __fail_with_invalid_task(self, request: NewTask):
         if request.title is None or request.title == '':
             raise AttributeError('Title is required')
