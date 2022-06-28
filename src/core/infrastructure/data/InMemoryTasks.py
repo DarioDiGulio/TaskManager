@@ -29,3 +29,9 @@ class InMemoryTasks(Tasks):
             if task.id == task_id:
                 return task
         return None
+
+    def find_by(self, title: str, description: str) -> Task:
+        for task in self.__tasks:
+            if task.title == title and task.description == description:
+                return task
+        return None

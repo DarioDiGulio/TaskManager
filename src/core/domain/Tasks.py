@@ -24,3 +24,7 @@ class Tasks:
     @abstractmethod
     def get_task(self, task_id: Id) -> Task:
         pass
+
+    @abstractmethod
+    def find_by(self, title: str, description: str) -> Task:
+        pass
