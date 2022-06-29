@@ -1,4 +1,5 @@
 import unittest
+from datetime import datetime
 from unittest import TestCase
 
 from src.core.app.new_task.NewTask import NewTask
@@ -16,6 +17,8 @@ class NewTaskTest(TestCase):
 
         saved_task = self.tasks.get_task(new_task_id)
         self.assertEqual(saved_task.title, 'New Task')
+        self.assertEqual(saved_task.description, 'Some description')
+        self.assertEqual(saved_task.date, datetime(2020, 12, 12))
 
     def test_fail_if_title_is_empty(self):
         new_task = NewTask('', 'Some description', '12/12/2020')
