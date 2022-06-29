@@ -39,9 +39,7 @@ class TaskBuilder:
         return self
 
     def build(self):
-        return Task.from_snapshot(
-            TaskSnapshot(self.__id, self.__title, self.__description, self.__due_date)
-        )
+        return Task.from_snapshot(TaskSnapshot(self.__id, self.__title, self.__description, self.__due_date))
 
 
 def task(changes=None):

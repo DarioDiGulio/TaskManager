@@ -35,3 +35,6 @@ class InMemoryTasks(Tasks):
             if task.title == title and task.description == description:
                 return task
         return None
+
+    def get_all(self) -> list[Task]:
+        return self.__tasks

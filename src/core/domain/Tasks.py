@@ -28,3 +28,7 @@ class Tasks:
     @abstractmethod
     def find_by(self, title: str, description: str) -> Task:
         pass
+
+    @abstractmethod
+    def get_all(self) -> list[Task]:
+        pass
