@@ -7,6 +7,8 @@ from src.core.infrastructure.bus.Handler import Handler
 
 
 class GetTasksHandler(Handler):
+    name = 'GetTask'
+
     def __init__(self, tasks: Tasks):
         self.__tasks = tasks
 

@@ -34,6 +34,12 @@ class Task:
     def date(self) -> datetime:
         return self.__date
 
+    def __str__(self) -> str:
+        return f'Task({self.__id}, {self.__title}, {self.__description}, {self.__date})'
+
+    def __repr__(self) -> str:
+        return f'Task({self.__id}, {self.__title}, {self.__description}, {self.__date})'
+
     @staticmethod
     def from_snapshot(snapshot: TaskSnapshot):
         return Task(snapshot.id, snapshot.title, snapshot.description, snapshot.date)

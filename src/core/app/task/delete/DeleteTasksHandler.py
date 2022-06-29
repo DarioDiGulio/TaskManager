@@ -5,6 +5,8 @@ from src.core.infrastructure.bus.Handler import Handler
 
 
 class DeleteTaskHandler(Handler):
+    name = 'DeleteTask'
+
     def __init__(self, tasks: Tasks):
         self.__tasks = tasks
 

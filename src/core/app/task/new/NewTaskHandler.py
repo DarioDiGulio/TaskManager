@@ -9,6 +9,8 @@ from src.core.infrastructure.bus.Handler import Handler
 
 
 class NewTaskHandler(Handler):
+    name = 'NewTask'
+
     def __init__(self, tasks: Tasks):
         self.__tasks = tasks
 
