@@ -3,6 +3,14 @@ from datetime import datetime
 from src.base.Id import Id
 
 
+class TaskSnapshot:
+    def __init__(self, id: Id, title: str, description: str, date: datetime) -> None:
+        self.id = id
+        self.title = title
+        self.description = description
+        self.date = date
+
+
 class Task:
     def __init__(self, id: Id, title: str, description: str, date: datetime) -> None:
         self.__id = id
@@ -25,3 +33,7 @@ class Task:
     @property
     def date(self) -> datetime:
         return self.__date
+
+    @staticmethod
+    def from_snapshot(snapshot: TaskSnapshot):
+        return Task(snapshot.id, snapshot.title, snapshot.description, snapshot.date)
