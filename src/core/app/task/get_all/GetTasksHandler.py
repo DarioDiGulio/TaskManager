@@ -1,6 +1,6 @@
 from typing import List
 
-from src.core.app.get_tasks.GetTasks import GetTasks
+from src.core.app.task.get_all.GetTasks import GetTasks
 from src.core.domain.Task import Task
 from src.core.domain.Tasks import Tasks
 from src.core.infrastructure.bus.Handler import Handler

@@ -1,12 +1,12 @@
 from unittest import TestCase
 
-from src.core.app.get_tasks.GetTasks import GetTasks
-from src.core.app.get_tasks.GetTasksHandler import GetTasksHandler
+from src.core.app.task.get_all.GetTasks import GetTasks
+from src.core.app.task.get_all.GetTasksHandler import GetTasksHandler
 from src.core.infrastructure.data.InMemoryTasks import InMemoryTasks
 from test.core.domain.TaskBuilder import task
 
 
-class GetTasksTest(TestCase):
+class GetTasksHandlerTest(TestCase):
 
     def test_get_tasks(self):
         self.tasks.add_task(task())

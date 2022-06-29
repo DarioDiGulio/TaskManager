@@ -1,14 +1,14 @@
 from datetime import datetime
 from unittest import TestCase
 
-from src.core.app.new_task.NewTask import NewTask
-from src.core.app.new_task.NewTaskHandler import NewTaskHandler
+from src.core.app.task.new.NewTask import NewTask
+from src.core.app.task.new.NewTaskHandler import NewTaskHandler
 from src.core.domain.TaskAlreadyExistsException import TaskAlreadyExistsException
 from src.core.infrastructure.data.InMemoryTasks import InMemoryTasks
 from test.core.domain.TaskBuilder import task
 
 
-class NewTaskTest(TestCase):
+class NewTaskHandlerTest(TestCase):
 
     def test_add_task(self):
         command = NewTask('New Task', 'Some description', '12/12/2020')

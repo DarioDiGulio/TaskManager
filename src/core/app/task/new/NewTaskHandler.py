@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from src.base.Id import Id
-from src.core.app.new_task.NewTask import NewTask
+from src.core.app.task.new.NewTask import NewTask
 from src.core.domain.Task import Task
 from src.core.domain.TaskAlreadyExistsException import TaskAlreadyExistsException
 from src.core.domain.Tasks import Tasks
