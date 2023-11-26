@@ -6,6 +6,7 @@ class CoreExecutor:
         self.__handlers = dict()
 
     def register_handler(self, handler: Handler):
+        print(f'Registering handler for {handler.__class__.__name__}')
         self.__handlers[handler.name] = handler
 
     def execute(self, request):
